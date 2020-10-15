@@ -1,4 +1,4 @@
-# final-project-4501
+# Squirrel Tracker (Final Project)
 # Who are we?
 We are Carrie and Honyu from Columbia University and this is our final project called Squirrel Universal. 
 We developed an application with the Django framework, using data imported from the 2018 Central Park Squirrel Census. 
