@@ -6,7 +6,7 @@
 			<li>
 				<br> Unique ID: {{squirrel.unique_id}}
 				<br> Date: {{squirrel.date}}
-			        <a href= "{% url 'squirrel:detail' squirrel.id %}">Details</a >
+			        <a href= "{% url 'squirrel:detail' squirrel.unique_id %}">Details</a >
 			</li>
 		{% endfor %}
 		</ul>

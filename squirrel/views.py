@@ -14,11 +14,12 @@ def index(request):
             }
     return render(request, 'squirrel/index.html', context)
 
-def detail(request, squirrel_id):
-    squirrel = get_object_or_404(Squirrel, pk=squirrel_id)
+def detail(request, unique_id):
+    squirrel = Squirrel.objects.filter(unique_id = unique_id)[0]
 
     context = {
-            'Squirrel':squirrel,
+            'squirrel':squirrel,
     }
-
+    print(squirrel.date)
+    print(squirrel.age)
     return render(request, 'squirrel/detail.html', context)
