@@ -1,10 +1,14 @@
 <!doctype html>
 <html>
 	<body>
-	<ul>
-	{% squirrel in squirrels %}
-	<li><a href=" 'squirrel:detail' squirrel.id %}>Unique Squirrel ID:{squirrel.unique_id }}</a ></li>
-	{% endfor %}
-	</ul>
+		<ul>
+			{% for squirrel in squirrels %}
+			<li>
+				<br> Unique ID: {{squirrel.unique_id}}
+				<br> Date: {{squirrel.date}}
+			        <a href= "{% url 'squirrel:detail' squirrel.id %}">Details</a >
+			</li>
+		{% endfor %}
+		</ul>
 	</body>
 </html>
