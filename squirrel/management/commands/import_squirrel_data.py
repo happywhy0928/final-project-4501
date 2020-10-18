@@ -18,6 +18,8 @@ class Command(BaseCommand):
         with open(file_) as fp:
             reader = csv.DictReader(fp)
 
+            str_to_bool = lambda x : (True if x.lower() == 'true' else False)
+
             for item in reader:
                 squ = Squirrel()
                 squ.latitude = item['X']
@@ -27,9 +29,9 @@ class Command(BaseCommand):
                 squ.date = datetime.strptime( item['Date'], '%m%d%Y').date()
                 squ.age = item['Age']
                 squ.furColor = item['Primary Fur Color']
-                squ.running = bool(item['Running'])
-                squ.eating = bool(item['Eating'])
-                squ.climbing = bool(item['Climbing'])
+                squ.running = str_to_bool(item['Running'])
+                squ.eating = str_to_bool(item['Eating'])
+                squ.climbing = str_to_bool(item['Climbing'])
                 id_count = Squirrel.objects.filter(unique_id = squ.unique_id).count()
                 if id_count > 0:
                     continue

@@ -57,10 +57,10 @@ def create_new(request):
 def stats(request):
      Number_of_Juvenile = Squirrel.objects.filter(age = 'Juvenile').count()
      Morning = Squirrel.objects.filter(shift = 'AM').count()
-     BlackFur = Squirrel.objects.filter(furColor = "black").count()
+     BlackFur = Squirrel.objects.filter(furColor = "Black").count()
      Eatings = Squirrel.objects.filter(eating = True).count()
      Runnings = Squirrel.objects.filter(running = True).count()
-     print(Number_of_Juvenile)
+     print(Runnings)
      context = {
             "Number_of_Juvenile":Number_of_Juvenile,            
             "Morning":Morning,

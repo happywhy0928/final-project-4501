@@ -3,14 +3,11 @@
 
 <head>
 	<p> View/Edit the Sighting!
-	<form action='.' method="post" style="color:white;">
-		<div class="form-group">
+	<form action='.' method="post">
 		{% csrf_token %}
-		{{ form.as_p }}
-		<hr class="my-4">
+		{{ form.as_p}}
 		<input type="submit" value="Update" class="btn btn-primary">
 
-		</div>
 	</form>
 
 
