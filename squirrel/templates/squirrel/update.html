@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+
+<head>
+	<p> View/Edit the Sighting!
+	<form action='.' method="post" style="color:white;">
+		<div class="form-group">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<hr class="my-4">
+		<input type="submit" value="Update" class="btn btn-primary">
+
+		</div>
+	</form>
+
+
+</body>
+
+</html>

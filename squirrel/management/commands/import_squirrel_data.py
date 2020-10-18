@@ -27,6 +27,9 @@ class Command(BaseCommand):
                 squ.date = datetime.strptime( item['Date'], '%m%d%Y').date()
                 squ.age = item['Age']
                 
+                id_count = Squirrel.objects.filter(unique_id = squ.unique_id).count()
+                if id_count > 0:
+                    continue
 
                 squ.save()
             msg = f'you are importing from {file_}'
