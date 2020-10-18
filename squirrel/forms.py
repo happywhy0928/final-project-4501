@@ -17,4 +17,8 @@ class UpdateSighting(ModelForm):
             'shift',
             'date',
             'age',
+            'furColor',
+            'running',
+            'eating',
+            'climbing',
         ]

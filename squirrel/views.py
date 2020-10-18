@@ -54,16 +54,19 @@ def create_new(request):
             }
         return render(request, 'squirrel/create.html', context)
 
-def statistics(request):
-     Number_of_Juvenile = Sightings.objects.filter(age = 'juvenile').count()
-     Latitude = Sightings.objects.filter(latitude > -93.96).count()
-     Longitude = Sightings.objects.filter(longitude > 40.78).count()
-     Morning = Sightings.objects.filter(shift == AM).count()
+def stats(request):
+     Number_of_Juvenile = Squirrel.objects.filter(age = 'Juvenile').count()
+     Morning = Squirrel.objects.filter(shift = 'AM').count()
+     BlackFur = Squirrel.objects.filter(furColor = "black").count()
+     Eatings = Squirrel.objects.filter(eating = True).count()
+     Runnings = Squirrel.objects.filter(running = True).count()
+     print(Number_of_Juvenile)
      context = {
-            "Number_of_Juvenile":Number_of_Juvenile,
-            "Latitude": Latitude,
-            "Longtitude": Longtitude,
-            "Morning": Morning,
+            "Number_of_Juvenile":Number_of_Juvenile,            
+            "Morning":Morning,
+            "BlackFur":BlackFur,
+            "Eatings":Eatings,
+            "Runnings":Runnings,
             }
-    return render(request,'squirrel/stat.html', context)
+     return render(request,'squirrel/stat.html', context)
 

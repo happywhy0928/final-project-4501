@@ -43,7 +43,7 @@ class Squirrel(models.Model):
 
     AGE_CHOICES = [
             (JUVENILE, _('Juvenile')),
-            (ADULT, _('ADULT')),
+            (ADULT, _('Adult')),
     ]
 
     age = models.CharField(
@@ -51,6 +51,34 @@ class Squirrel(models.Model):
             help_text=_('Age of Squirrel'),
             choices = AGE_CHOICES,
             blank=True,
+    )
+    
+    BLACK = 'Black'
+    CINNAMON = 'Cinnamon'
+    GRAY = 'Gray'
+
+    COLOR_CHOICE = (
+            (BLACK,_('Black')),
+            (CINNAMON,_('Cinnamon')),
+            (GRAY,_('Gray')),
+            )
+
+    furColor = models.CharField(
+            max_length=20,
+            choices = COLOR_CHOICE,
+            blank = True,
+    )
+
+    running = models.BooleanField(
+            blank = True,
+    )
+
+    eating = models.BooleanField(
+            blank = True,
+    )
+
+    climbing = models.BooleanField(
+            blank = True,
     )
     
     def __str__(self):

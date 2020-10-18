@@ -26,7 +26,10 @@ class Command(BaseCommand):
                 squ.shift = item['Shift']
                 squ.date = datetime.strptime( item['Date'], '%m%d%Y').date()
                 squ.age = item['Age']
-                
+                squ.furColor = item['Primary Fur Color']
+                squ.running = bool(item['Running'])
+                squ.eating = bool(item['Eating'])
+                squ.climbing = bool(item['Climbing'])
                 id_count = Squirrel.objects.filter(unique_id = squ.unique_id).count()
                 if id_count > 0:
                     continue
