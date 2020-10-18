@@ -9,4 +9,5 @@ urlpatterns = [
         path('map/', views.map, name = 'map'),
         path('sightings/add/', views.create_new, name = 'create new sighting'),
         path('sightings/<unique_id>/', views.update, name='update'),
+        path('sightings/stats/', views.stats, name='stats'),
         ]

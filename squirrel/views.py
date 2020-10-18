@@ -54,3 +54,16 @@ def create_new(request):
             }
         return render(request, 'squirrel/create.html', context)
 
+def statistics(request):
+     Number_of_Juvenile = Sightings.objects.filter(age = 'juvenile').count()
+     Latitude = Sightings.objects.filter(latitude > -93.96).count()
+     Longitude = Sightings.objects.filter(longitude > 40.78).count()
+     Morning = Sightings.objects.filter(shift == AM).count()
+     context = {
+            "Number_of_Juvenile":Number_of_Juvenile,
+            "Latitude": Latitude,
+            "Longtitude": Longtitude,
+            "Morning": Morning,
+            }
+    return render(request,'squirrel/stat.html', context)
+
