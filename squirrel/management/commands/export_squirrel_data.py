@@ -1,7 +1,9 @@
 from django.core.management.base import BaseCommand, CommandError
   
 from squirrel.models import Squirrel
+
 import csv
+
 class Command(BaseCommand):
     help = 'export the squirrel data scv'
     def add_arguments(self, parser):
