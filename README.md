@@ -20,9 +20,9 @@ Group Name and Section: Carrie and Honyu, Section 1
 Team member UNIS: [kx2162, hw2801]
 
 Our application: 
-map link：   /map
-A view that lists all squirrel sightings with links to view each sighting： /sighting
-A view to update a particular sighting：/sightings/<unique-squirrel-id>
-A view to create a new sighting： /sightings/add
-A view with general stats about the sightings： /sightings/stats
+1. map link：   /map
+2. A view that lists all squirrel sightings with links to view each sighting： /sighting
+3. A view to update a particular sighting：/sightings/<unique-squirrel-id>
+4. A view to create a new sighting： /sightings/add
+5. A view with general stats about the sightings： /sightings/stats
 
